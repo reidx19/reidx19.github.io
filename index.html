@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Reid Passmore | Georgia Tech</title>
+
+		<!-- Leaflet CSS -->
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+
+		<!-- Leaflet JS -->
+		<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+
+	</head>
+	<body bgcolor="#FFFFFF">
+		<style>
+			body {font-family: "Helvetica", "Arial", "Verdana", sans-serif;;
+			background-image: url('network.png'); /* Replace with your image path */
+      		background-repeat: no-repeat; /* Prevent image repetition */
+			background-size: cover; /* Make image cover the entire background */
+			background-position: center; /* Center the image */
+			/* Adding a semi-transparent overlay color */
+			background-color: rgba(255, 255, 255, 0.85); /* Black with 50% opacity */
+			background-blend-mode: overlay; /* Blend the background image and color */
+		}
+
+		</style>
+
+		<h1>Reid Passmore</h1>
+
+		<img src="FacePic.jpeg" width=200>
+		
+		<p>PhD Candidate at the School of Civil and Environmental Engineering at the Georgia Institute of Technology</p>
+		<p>Visiting scholar at the Institute of Transportation Studies at University of California Davis</p>
+		<p><b>Email:</b> <a href="mailto:tanner.passmore@gatech.edu">tanner.passmore@gatech.edu</a></p>
+		<p> 
+			<b>Links:</b>
+			<a href="resume.pdf">Resume</a>,
+			<a href="linkedin.com/in/reidpassmore" target="_blank">LinkedIn</a>,
+			<a href="https://github.com/reidx19">GitHub</a>,
+			<a href="https://scholar.google.com/citations?user=mlsN8y8AAAAJ&hl=en&oi=ao">Google Scholar</a>,
+			<a href="https://orcid.org/0000-0001-6602-2702">ORCID</a>
+		</p>
+		
+		<hr>
+
+		<h2>Background and Current Work</h2>
+		
+		<p>
+		At present, I’m a Ph.D. candidate in Transportation Systems Engineering at the Georgia Institute of Technology,
+		and a visiting scholar at the Institute for Transportation Studies at UC Davis (currently residing in Davis, CA).
+		My expected graduation date is December 2024. I'm advised by
+		<a href="https://cee.engineering.ucdavis.edu/people/kari-watkins">Dr. Kari Watkins</a> and
+		<a href="https://www.ce.gatech.edu/directory/person/randall-l-guensler">Dr. Randall Guensler</a>.
+		My current research project (and my dissertation work) is on using how cyclists route through street networks
+		(avoiding busy roads and hills while seeking bicycle infrastructure) to assist in planning new cycling infrastructure.
+		</p>
+
+		<hr>
+
+		<h2>Research Projects</h2>
+
+		<h3>BikewaySim: Using cycling routing to systematically plan new cycling infrastructure</h3>
+		<p>
+			BikewaySim is a tool intended for helping cities, DOTs, MPOs, or advocacy groups evaluate potential cycling
+			infrastructure/networks. It relies on cycling impedance to find the optimal route from point A to point B
+			according to travel time + a cyclists’ preferences for road attributes (e.g., road gradient, number of lanes,
+			car traffic volume, bicycle infrastructure separated out by type, type of intersection (signalized, two way
+			stop with cross traffic that doesn’t stop), etc.). Cycling impedance is calibrated using GPS traces from
+			cyclists which might be collected through an app/travel diary/etc. Using cycling impedance, the optimal
+			routes between a set of origins and destinations (from TDM OD matrices or travel diaries) can be used to
+			calculate the total cycling impedance for each trip. Then, the process is repeated with a different network
+			with new cycling infrastructure to see how that infrastructure reduced cycling impedance.
+			This reduction can be used to prioritize new infrastructure accordingly.
+		</p>
+		<p>BikewaySim is a collection of Python, Jupyter Notebook, and Shell/Batch scripts for:</p>
+		<ol>
+			<li> Processing OpenStreetMap (OSM) data into an all viable paths and
+				routable cycling network using OSMnx, Geofabrik, and Osmium</li>
+			<li> Conflating and reconciling attributes from other network sources to OSM</li>
+			<li> Map matching cycling GPS traces to OSM using Leuven Map Matching</li>
+			<li> Calibrating custom link + turn impedance functions (i.e., edge + turn costs) for
+				Dijkstra shortest path routing using Stochopy</li>
+			<li> Evaluating new cycling infrastructure based on change in aggregate impedance using NetworkX</li>
+		</ol>
+		<p>Follow its development on <a href="https://github.com/gti-gatech/BikewaySim">GitHub</a>.</p>	
+
+		<figure>
+			<img src="bikewaysim.png" width=350>
+			<figcaption>BikewaySim output showing impedance reduction contribution from planned cycling infrastructure in Atlanta, GA</figcaption>
+		</figure>
+	
+		<figure>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/JYIGXL0jldc?si=MURwtXPEhI7yx6PC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			<figcaption>Presenting BikewaySim related work at State of the Map 2024 in Salt Lake City, Utah</figcaption>
+		</figure>
+
+		<h3>BikewaySim + TransitSim for Modeling Bike + Transit Trips</h3>
+
+		<p>
+			Public transit in the United States often requires trekking long distances at the start and/or end of a trip,
+			commonly referred to as the first-last mile problem. Bicycles are one possible solution to this problem that
+			have seen widespread use in the Netherlands, where ~40% of passenger rail trips begin by bike. In the United
+			States however, these trips are not well catered to and trip planning apps often don't provide bike + transit
+			directions.
+		</p>
+		<p>
+			This project involved modeling bike + transit trips in the Metropolitan Atlanta Rapid Transportation
+			Authority's (MARTA) service area. The bicycle portion of trips was modeled using Dijkstra's algorithm
+			on OSM data, and the transit portion of trips was modeled using the RAPTOR algorithm implemented in
+			the Transit-Routing Python library.
+		</p>
+
+		<figure>
+			<img src="transitsim.png" width=350>
+			<figcaption>Visualization showing difference in accessibility by bike + transit vs. walk + transit</figcaption>
+		</figure>
+	
+
+		<hr>
+		<h2>Publications</h2>
+
+		<div class="csl-bib-body" style="line-height: 1.35; ">
+		<div class="csl-entry" style="clear: left; ">
+			<div class="csl-left-margin" style="float: left; padding-right: 0.5em;text-align: right; width: 2em;">(1) </div><div class="csl-right-inline" style="margin: 0 .4em 0 2.5em;"><b>Passmore, R.</b>, K., Watkins, and R. Guensler (2024). Using Shortest Path Routing to Assess Cycling Networks. <i>Journal of Transportation Geography</i>. <a href="https://doi.org/10.1016/j.jtrangeo.2024.103864">doi.org/10.1016/j.jtrangeo.2024.103864</a>.</div>
+		</div>
+		<div class="csl-entry" style="clear: left; ">
+			<div class="csl-left-margin" style="float: left; padding-right: 0.5em;text-align: right; width: 2em;">(2) </div><div class="csl-right-inline" style="margin: 0 .4em 0 2.5em;"><b>Passmore, R.</b>, K., Watkins, and R. Guensler (2024). Assessing Bike-Transit Accessibility. <i>Transportation Research Record</i>. <a href="https://doi.org/10.1177/03611981241234902">doi.org/10.1177/03611981241234902</a>.</div>
+		</div>
+		<div class="csl-entry" style="clear: left; ">
+			<div class="csl-left-margin" style="float: left; padding-right: 0.5em;text-align: right; width: 2em;">(3) </div><div class="csl-right-inline" style="margin: 0 .4em 0 2.5em;"><b>Passmore, R.</b>, K., Watkins, and R. Guensler (2024). Simulating Bike-Transit Trips Through BikewaySim and TransitSim. <i>National Center for Sustainable Transportation</i>. <a href="https://doi.org/10.1177/03611981241234902">doi.org/10.1177/03611981241234902</a>.</div>
+		</div>
+		<div class="csl-entry" style="clear: left; ">
+			<div class="csl-left-margin" style="float: left; padding-right: 0.5em;text-align: right; width: 2em;">(4) </div><div class="csl-right-inline" style="margin: 0 .4em 0 2.5em;"><b>Passmore, R.</b>, K., Watkins, and R. Guensler (2021). BikewaySim Technology Transfer: City of Atlanta, Georgia. <i>National Center for Sustainable Transportation</i>. <a href="https://dx.doi.org/10.7922/G2CF9NDV">dx.doi.org/10.7922/G2CF9NDV</a>.</div>
+		</div>
+		<div class="csl-entry" style="clear: left; ">
+			<div class="csl-left-margin" style="float: left; padding-right: 0.5em;text-align: right; width: 2em;">(5) </div><div class="csl-right-inline" style="margin: 0 .4em 0 2.5em;"> Watkins, K., P. Mokhtarian, C. Clark, and <b>R. Passmore</b> (2019). BeltLine Bicyclist Facility Preferences and Effect on Increasing Trips. Publication FHWA-GA-19-1638. GDOT. <a href="https://rosap.ntl.bts.gov/view/dot/40257">rosap.ntl.bts.gov/view/dot/40257</a>.</div>
+		</div>
+		<hr>
+		<h2>For Fun</h2>
+		
+		<p>
+			Outside of work, I enjoy exploring urban and outdoor locations on foot, by bike, or by public transit.
+			I'm the type of person that will go out of their way to take my bicycle to as many places as possible with
+			the support of public transportation.
+		</p>
+
+		<ul>
+			<li>Current most used transit system: Capitol Corridor + BART</li>
+			<li>Favorite transit system: WMATA</li>
+			<li>Most underrated transit system: MARTA</li>
+			<li>Transit system bucket list: Skytrain, Shinkansen, MBTA</li>
+		</ul>
+
+	</body>
+</html>
