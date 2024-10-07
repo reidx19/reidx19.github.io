@@ -24,7 +24,6 @@
 			background-color: rgba(255, 255, 255, 0.85); /* Black with 50% opacity */
 			background-blend-mode: overlay; /* Blend the background image and color */
 		}
-
 		</style>
 
 		<h1>Reid Passmore</h1>
@@ -63,31 +62,18 @@
 
 		<h3>BikewaySim: Using cycling routing to systematically plan new cycling infrastructure</h3>
 		<p>
-			BikewaySim is a tool intended for helping cities, DOTs, MPOs, or advocacy groups evaluate potential cycling
-			infrastructure/networks. It relies on cycling impedance to find the optimal route from point A to point B
-			according to travel time + a cyclists’ preferences for road attributes (e.g., road gradient, number of lanes,
-			car traffic volume, bicycle infrastructure separated out by type, type of intersection (signalized, two way
-			stop with cross traffic that doesn’t stop), etc.). Cycling impedance is calibrated using GPS traces from
-			cyclists which might be collected through an app/travel diary/etc. Using cycling impedance, the optimal
-			routes between a set of origins and destinations (from TDM OD matrices or travel diaries) can be used to
-			calculate the total cycling impedance for each trip. Then, the process is repeated with a different network
-			with new cycling infrastructure to see how that infrastructure reduced cycling impedance.
-			This reduction can be used to prioritize new infrastructure accordingly.
+			BikewaySim is a collection of open-source scripts for helping cities, DOTs, MPOs, and/or advocacy groups assess the connectivity impacts of new cycling facilities (bike lanes and cycletracks) through change in cycling impedance.
+		<p>
+			Cycling impedance measures the relative difficulty of cycling from point A to point B considering travel time, elevation/hills, exposure to automobile traffic, the presence of bicycle facilities, and other preferences that cyclists have for road features.
 		</p>
-		<p>BikewaySim is a collection of Python, Jupyter Notebook, and Shell/Batch scripts for:</p>
-		<ol>
-			<li> Processing OpenStreetMap (OSM) data into an all viable paths and
-				routable cycling network using OSMnx, Geofabrik, and Osmium</li>
-			<li> Conflating and reconciling attributes from other network sources to OSM</li>
-			<li> Map matching cycling GPS traces to OSM using Leuven Map Matching</li>
-			<li> Calibrating custom link + turn impedance functions (i.e., edge + turn costs) for
-				Dijkstra shortest path routing using Stochopy</li>
-			<li> Evaluating new cycling infrastructure based on change in aggregate impedance using NetworkX</li>
-		</ol>
-		<p>Follow its development on <a href="https://github.com/gti-gatech/BikewaySim">GitHub</a>.</p>	
+		<p>
+			BikewaySim's cycling impedance model is trained on existing recorded cycling trips. The cycling impedance model can then be used to simulate cycling impedance (including the optimal route such as in Figure 1) between any two places (home to grocery, school to park, etc.). On its own, this model can be used by cities to help suggest better cycling routes to encourage cycling.
+		</p>
+		
+		<p>Follow its development on <a href="https://github.com/gti-gatech/BikewaySim/tree/master">GitHub</a>.</p>	
 
 		<figure>
-			<img src="bikewaysim.jpeg" width=350>
+			<img src="bikewaysim.jpeg" width=200>
 			<figcaption>BikewaySim output showing impedance reduction contribution from planned cycling infrastructure in Atlanta, GA</figcaption>
 		</figure>
 	
@@ -122,21 +108,31 @@
 		<h2>Publications</h2>
 
 		<div class="csl-bib-body" style="line-height: 1.35; ">
-		<div class="csl-entry" style="clear: left; ">
-			<div class="csl-left-margin" style="float: left; padding-right: 0.5em;text-align: right; width: 2em;">(1) </div><div class="csl-right-inline" style="margin: 0 .4em 0 2.5em;"><b>Passmore, R.</b>, K., Watkins, and R. Guensler (2024). Using Shortest Path Routing to Assess Cycling Networks. <i>Journal of Transportation Geography</i>. <a href="https://doi.org/10.1016/j.jtrangeo.2024.103864">doi.org/10.1016/j.jtrangeo.2024.103864</a>.</div>
+			<div class="csl-entry" style="clear: left; ">
+				<div class="csl-left-margin" style="float: left; padding-right: 0.5em;text-align: right; width: 2em;">(1) </div><div class="csl-right-inline" style="margin: 0 .4em 0 2.5em;">Garber, M., <b>R. Passmore.</b>, K. Crist, D. Rojas-Rueda, and T. Benmarhnia (2024). The Prevalence of High-Stress Paint-Only Bike Lanes in 442 U.S. Cities. <i>Research Square</i>. DOI:<a href="https://doi.org/10.21203/rs.3.rs-4718890/v1">10.21203/rs.3.rs-4718890/v1</a>.</div>
 		</div>
+
+		<div class="csl-bib-body" style="line-height: 1.35; ">
 		<div class="csl-entry" style="clear: left; ">
-			<div class="csl-left-margin" style="float: left; padding-right: 0.5em;text-align: right; width: 2em;">(2) </div><div class="csl-right-inline" style="margin: 0 .4em 0 2.5em;"><b>Passmore, R.</b>, K., Watkins, and R. Guensler (2024). Assessing Bike-Transit Accessibility. <i>Transportation Research Record</i>. <a href="https://doi.org/10.1177/03611981241234902">doi.org/10.1177/03611981241234902</a>.</div>
+			<div class="csl-left-margin" style="float: left; padding-right: 0.5em;text-align: right; width: 2em;">(1) </div><div class="csl-right-inline" style="margin: 0 .4em 0 2.5em;"><b>Passmore, R.</b>, K. Watkins, and R. Guensler (2024). Using Shortest Path Routing to Assess Cycling Networks. <i>Journal of Transportation Geography</i>. DOI:<a href="https://doi.org/10.1016/j.jtrangeo.2024.103864">10.1016/j.jtrangeo.2024.103864</a>.</div>
 		</div>
+
 		<div class="csl-entry" style="clear: left; ">
-			<div class="csl-left-margin" style="float: left; padding-right: 0.5em;text-align: right; width: 2em;">(3) </div><div class="csl-right-inline" style="margin: 0 .4em 0 2.5em;"><b>Passmore, R.</b>, K., Watkins, and R. Guensler (2024). Simulating Bike-Transit Trips Through BikewaySim and TransitSim. <i>National Center for Sustainable Transportation</i>. <a href="https://doi.org/10.1177/03611981241234902">doi.org/10.1177/03611981241234902</a>.</div>
+			<div class="csl-left-margin" style="float: left; padding-right: 0.5em;text-align: right; width: 2em;">(2) </div><div class="csl-right-inline" style="margin: 0 .4em 0 2.5em;"><b>Passmore, R.</b>, K. Watkins, and R. Guensler (2024). Assessing Bike-Transit Accessibility. <i>Transportation Research Record</i>. DOI:<a href="https://doi.org/10.1177/03611981241234902">DOI: 10.1177/03611981241234902</a>.</div>
 		</div>
+
 		<div class="csl-entry" style="clear: left; ">
-			<div class="csl-left-margin" style="float: left; padding-right: 0.5em;text-align: right; width: 2em;">(4) </div><div class="csl-right-inline" style="margin: 0 .4em 0 2.5em;"><b>Passmore, R.</b>, K., Watkins, and R. Guensler (2021). BikewaySim Technology Transfer: City of Atlanta, Georgia. <i>National Center for Sustainable Transportation</i>. <a href="https://dx.doi.org/10.7922/G2CF9NDV">dx.doi.org/10.7922/G2CF9NDV</a>.</div>
+			<div class="csl-left-margin" style="float: left; padding-right: 0.5em;text-align: right; width: 2em;">(3) </div><div class="csl-right-inline" style="margin: 0 .4em 0 2.5em;"><b>Passmore, R.</b>, K., Watkins, and R. Guensler (2024). Simulating Bike-Transit Trips Through BikewaySim and TransitSim. <i>National Center for Sustainable Transportation</i>. DOI:<a href="http://dx.doi.org/10.7922/G22R3Q0B">DOI: 10.7922/G22R3Q0B</a>.</div>
 		</div>
+
 		<div class="csl-entry" style="clear: left; ">
-			<div class="csl-left-margin" style="float: left; padding-right: 0.5em;text-align: right; width: 2em;">(5) </div><div class="csl-right-inline" style="margin: 0 .4em 0 2.5em;"> Watkins, K., P. Mokhtarian, C. Clark, and <b>R. Passmore</b> (2019). BeltLine Bicyclist Facility Preferences and Effect on Increasing Trips. Publication FHWA-GA-19-1638. GDOT. <a href="https://rosap.ntl.bts.gov/view/dot/40257">rosap.ntl.bts.gov/view/dot/40257</a>.</div>
+			<div class="csl-left-margin" style="float: left; padding-right: 0.5em;text-align: right; width: 2em;">(4) </div><div class="csl-right-inline" style="margin: 0 .4em 0 2.5em;"><b>Passmore, R.</b>, K. Watkins, and R. Guensler (2021). BikewaySim Technology Transfer: City of Atlanta, Georgia. <i>National Center for Sustainable Transportation</i>. DOI:<a href="https://dx.doi.org/10.7922/G2CF9NDV">dx.doi.org/10.7922/G2CF9NDV</a>.</div>
 		</div>
+
+		<div class="csl-entry" style="clear: left; ">
+			<div class="csl-left-margin" style="float: left; padding-right: 0.5em;text-align: right; width: 2em;">(5) </div><div class="csl-right-inline" style="margin: 0 .4em 0 2.5em;"> Watkins, K., P. Mokhtarian, C. Clark, and <b>R. Passmore</b> (2019). BeltLine Bicyclist Facility Preferences and Effect on Increasing Trips. Publication FHWA-GA-19-1638. GDOT. DOI:<a href="https://rosap.ntl.bts.gov/view/dot/40257">rosap.ntl.bts.gov/view/dot/40257</a>.</div>
+		</div>
+
 		<hr>
 		<h2>For Fun</h2>
 		
